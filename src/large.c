@@ -67,6 +67,7 @@ large_palloc(tsdn_t *tsdn, arena_t *arena, size_t usize, size_t alignment,
 		    extent_usize_get(extent));
 	}
 
+	//fprintf(stderr, "%s:%d: extent->e_addr: %p\n", __FILE__, __LINE__, extent->e_addr);
 	arena_decay_tick(tsdn, arena);
 	return extent_addr_get(extent);
 }

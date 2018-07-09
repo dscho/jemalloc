@@ -116,6 +116,8 @@ static inline void *
 extent_base_get(const extent_t *extent) {
 	assert(extent->e_addr == PAGE_ADDR2BASE(extent->e_addr) ||
 	    !extent_slab_get(extent));
+	//fprintf(stderr, "extent_base_get(%p) ", extent->e_addr);
+	//fprintf(stderr, "-> %p\n)", PAGE_ADDR2BASE(extent->e_addr));
 	return PAGE_ADDR2BASE(extent->e_addr);
 }
 
